@@ -1,2 +1,2 @@
-# T5: SHO Model logistiky - rozvoz/transport zboží a materiálu
-Zvolte si firmu zabývající se transportem zboží nebo materiálu. Modelujte její strukturu a provoz. V experimentech se zaměřte na sledování ekonomiky provozu. Navrhněte úspory, změny, odlišné typy dopravy (železniční, lodní). Na experimentech ukažte vliv navržených změn.
+# T1: SHO Model výroby v oblasti strojírenství
+Zvolte si strojírenský výrobní podnik (malý, střední, velký). Vytvořte jeho model zaměřený a) na jeho kompletní výrobní činnost (tj vhodné pro podniky s omezeným sortimentem výroby), b) jeden významný produkt a jeho výrobní proces (linku, tok materiálu, součinnost se zaměstnanci). Na experimentech ukažte slabá místa provozu. Navrhněte změny v provozu (změny struktury linky, změny kapacit apod).
