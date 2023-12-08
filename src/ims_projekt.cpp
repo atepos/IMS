@@ -5,55 +5,55 @@
 
 #include "work.hpp"
 
+#define RESET "\033[0m"
+#define GREEN "\033[32m"
+
 #define SIMULATION_START_TIME 0.0
 #define SIMULATION_END_TIME 24.0 * 60.0
 
 #define DEFAULT_NUMBER_OF_WORKERS 10
-#define DEFAULT_NUMBER_OF_CNC 7
-#define DEFAULT_DEVIATION_OF_MILLING_MACHINES 3
+#define DEFAULT_NUMBER_OF_CNC 3
+#define DEFAULT_NUMBER_OF_MILLING_MACHINES 7
 
-#define DEFAULT_COUNT_OF_INCOMING_ORDER 500
-#define DEFAULT_DEVIATION_OF_ORDERS 4.7
+#define DEFAULT_COUNT_OF_INCOMING_ORDER 29
+#define DEFAULT_DEVIATION_OF_ORDERS 3.3
+
+#define SIMULATION_TIMES 7
 
 using namespace std;
 
-void help()
-{
-    cout << "Possible Input arguments:" << endl;
-    cout << "--workers to specify the number of workers in job" << endl;
-    cout << "--orders to specify the number of orders that day" << endl;
-}
-
 int main()
 {
-    unsigned long workers = DEFAULT_NUMBER_OF_WORKERS;
-    double orders = DEFAULT_COUNT_OF_INCOMING_ORDER;
 
-    // help();
+    cout << "############################################################" << endl;
+    cout << "\tSTART OF SIMULATION" << endl;
+    cout << "############################################################" << endl;
+    cout << "Experiments starts with " << GREEN << DEFAULT_NUMBER_OF_WORKERS << RESET << " count of workers." << endl;
+    cout << "Experiments starts with " << GREEN << DEFAULT_NUMBER_OF_CNC << RESET << " count of CNC's." << endl;
+    cout << "Experiments starts with " << GREEN << DEFAULT_NUMBER_OF_MILLING_MACHINES << RESET << " count of Milling machine's ." << endl;
+    cout << "Experiments starts with " << GREEN << DEFAULT_COUNT_OF_INCOMING_ORDER << RESET << " count of order's." << endl;
+    cout << "Experiments starts with " << GREEN << DEFAULT_DEVIATION_OF_ORDERS << RESET << " deviation of order's" << endl;
+    cout << "Experiments starts with " << GREEN << SIMULATION_TIMES << RESET << " count of simulation start" << endl;
 
-    cout << "------------------------------------------------------------" << endl;
-    cout << "START OF SIMULATION" << endl;
-    cout << "------------------------------------------------------------" << endl;
-    cout << "Running experiment with " << workers << " number of cars." << endl;
-    cout << "Running experiment with " << orders << " average number of food." << endl;
-    cout << "------------------------------------------------------------" << endl;
+    cout << "############################################################" << endl;
 
-    for (int i = 1; i <= 1; i++)
+    for (int i = 1; i <= SIMULATION_TIMES; i++)
     {
 
-        cout << "----- RUNNING TRY NUMBER " << i << endl;
+        cout << "\tExperiment number: " << i << endl;
         Init(SIMULATION_START_TIME, SIMULATION_END_TIME);
 
-        (new WorkDay(workers,
-                     orders,
+        (new WorkDay(DEFAULT_NUMBER_OF_WORKERS,
+                     DEFAULT_COUNT_OF_INCOMING_ORDER,
                      DEFAULT_DEVIATION_OF_ORDERS,
                      DEFAULT_NUMBER_OF_CNC,
-                     DEFAULT_DEVIATION_OF_MILLING_MACHINES))
+                     DEFAULT_NUMBER_OF_MILLING_MACHINES))
             ->Activate();
         Run();
         SIMLIB_statistics.Output();
-
-        cout << "----- END OF TRY NUMBER " << i << endl
+        cout << "############################################################" << endl;
+        cout << "\t End of Experiment number: " << i << endl;
+        cout << "############################################################\n"
              << endl;
     }
     return EXIT_SUCCESS;

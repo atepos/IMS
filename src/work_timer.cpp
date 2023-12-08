@@ -1,11 +1,3 @@
-/**
- * VUT FIT IMS project - Freshbox food distribution.
- *
- * @file Work shift timer event implementation.
- * @author Dominik Harmim <xharmi00@stud.fit.vutbr.cz>
- * @author Vojtech Hertl <xhertl04@stud.fit.vutbr.cz>
- */
-
 #include <iostream>
 #include "work_timer.hpp"
 

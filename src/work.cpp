@@ -5,6 +5,7 @@
 #include "work.hpp"
 #include "uniform_distribution.hpp"
 #include "product.hpp"
+#include "lunch_timer.hpp"
 
 using namespace std;
 
@@ -16,7 +17,7 @@ WorkDay::WorkDay(unsigned long workers, int average_orders_count, double order_d
     this->is_lunch_time = new Facility("Lunch_time-Facility");
 
     orders = new int(static_cast<int>(
-        AverageUniformDistribution::Generate(average_orders_count, order_deviation)));
+        UniformDistribution::Generate(average_orders_count, order_deviation)));
 
     product_loading_time_stats = new Stat("Preparing material for CNC");
     product_machining_time_stats = new Stat("CNC Machining");
@@ -41,6 +42,7 @@ WorkDay::~WorkDay()
 void WorkDay::Behavior()
 {
     auto *timer = new WorkTimer(this);
+    (new LunchTimer(is_lunch_time))->Activate(Time + START_OF_LUNCH);
 
     while (*orders > 0)
     {
@@ -50,7 +52,12 @@ void WorkDay::Behavior()
 
         Enter(*workers, 1);
 
-        printf("%f\n", Time);
+        if ((*orders) == 0)
+        {
+            Leave(*workers, 1);
+            break;
+        }
+
         (*orders)--;
 
         (new Product(workers,
@@ -65,22 +72,24 @@ void WorkDay::Behavior()
             ->Activate();
     }
 
+    Enter(*workers, workers->Capacity());
+    Leave(*workers, workers->Capacity());
+
     delete timer;
 }
 
 void WorkDay::print_start_of_the_work_day()
 {
 
-    cout << "////////////////////////////////////////////////////////////" << endl;
-    cout << "Work shift started." << endl;
+    cout << "############################################################" << endl;
+    cout << "Work day starts." << endl;
     cout << "\tStart time: " << Time << endl;
-    cout << "\tNumber of workers: " << workers->Capacity() << endl;
-    cout << "\tNumber of orders: " << *orders << endl;
+    cout << "\tOrder count: " << *orders << endl;
 }
 
 void WorkDay::print_end_of_the_work_day()
 {
-    cout << "End of work shift." << endl;
+    cout << "Work day ends." << endl;
     cout << "\tEnd time: " << Time << endl;
     cout << "\tNumber of orders left: " << *orders << endl;
 
