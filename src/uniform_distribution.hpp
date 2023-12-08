@@ -20,11 +20,13 @@ class UniformDistribution
 public:
     /**
      * @brief Generates a random number from a uniform distribution.
-     * @param average The average value of the distribution.
-     * @param deviation The deviation of the distribution.
+     * @param avg The average value of the distribution.
+     * @param dev The deviation of the distribution.
      * @return A random number following a uniform distribution.
      */
-    static double Generate(double average, double deviation);
+    static double UniformDistr(double avg, double dev);
+
+private:
 };
 
 #endif // UNIFORMDISTRIBUTION_HPP

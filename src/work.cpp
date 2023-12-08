@@ -24,7 +24,7 @@ WorkDay::WorkDay(unsigned long workers, int average_orders_count, double order_d
     this->is_lunch_time = new Facility("Lunch_time-Facility");
 
     orders = new int(static_cast<int>(
-        UniformDistribution::Generate(average_orders_count, order_deviation)));
+        UniformDistribution::UniformDistr(average_orders_count, order_deviation)));
 
     product_loading_time_stats = new Stat("Preparing material for CNC");
     product_machining_time_stats = new Stat("CNC Machining");

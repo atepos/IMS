@@ -19,12 +19,7 @@ WorkTimer::WorkTimer(WorkDay *workDay) : workDay(workDay)
 void WorkTimer::Behavior()
 {
 
-    print_end_of_the_work();
+    cout << "ERROR: end of the work day, due to the time out" << endl;
 
     delete workDay;
-}
-
-void WorkTimer::print_end_of_the_work()
-{
-    cout << "End of work shift because timer elapsed.\n\n";
 }

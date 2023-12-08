@@ -1,7 +1,7 @@
 /**
  * VUT FIT IMS SHO project - Model vyroby v oblasti strojírenství
  *
- * @file Product process header implementation
+ * @file Uniform distribution implementation
  * @author Petr Kaška <xkaska01@stud.fit.vutbr.cz>
  * @author Martin Hemza <xhemza05@stud.fit.vutbr.cz>
  */
@@ -9,8 +9,9 @@
 #include <simlib.h>
 #include "uniform_distribution.hpp"
 
-double UniformDistribution::Generate(double average, double deviation)
+double UniformDistribution::UniformDistr(double avg, double dev)
 {
-    double deviationValue = deviation / 100.0 * average;
-    return Uniform(average - deviationValue, average + deviationValue);
+
+    double dev_dispersion = dev / 100.0 * avg;
+    return Uniform(avg - dev_dispersion, avg + dev_dispersion);
 }

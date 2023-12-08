@@ -38,16 +38,6 @@ private:
     const double WORK_SHIFT_DURATION = 9.0 * 60.0; /**< Duration of a standard work shift in minutes. */
 
     WorkDay *workDay; /**< Pointer to the associated WorkDay object. */
-
-    /**
-     * @brief Helper function to print the end of the work shift.
-     */
-    void print_end_of_the_work();
-
-    /**
-     * @brief Helper function to print the start of the lunch break.
-     */
-    void print_start_of_the_lunch();
 };
 
 #endif // WORK_TIMER_HPP
