@@ -1,3 +1,11 @@
+/**
+ * VUT FIT IMS SHO project - Model vyroby v oblasti strojírenství
+ *
+ * @file Main file, lunch timer Event implementation
+ * @author Petr Kaška <xkaska01@stud.fit.vutbr.cz>
+ * @author Martin Hemza <xhemza05@stud.fit.vutbr.cz>
+ */
+
 #ifndef LUNCH_TIMER_HPP
 #define LUNCH_TIMER_HPP
 

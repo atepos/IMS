@@ -1,3 +1,11 @@
+/**
+ * VUT FIT IMS SHO project - Model vyroby v oblasti strojírenství
+ *
+ * @file Product process header implementation
+ * @author Petr Kaška <xkaska01@stud.fit.vutbr.cz>
+ * @author Martin Hemza <xhemza05@stud.fit.vutbr.cz>
+ */
+
 #ifndef PRODUCT_HPP
 #define PRODUCT_HPP
 

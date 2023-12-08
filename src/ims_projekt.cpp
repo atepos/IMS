@@ -1,3 +1,11 @@
+/**
+ * VUT FIT IMS SHO project - Model vyroby v oblasti strojírenství
+ *
+ * @file Main file, start of the simulation
+ * @author Petr Kaška <xkaska01@stud.fit.vutbr.cz>
+ * @author Martin Hemza <xhemza05@stud.fit.vutbr.cz>
+ */
+
 #include <cstdlib>
 #include <simlib.h>
 #include <getopt.h>

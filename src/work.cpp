@@ -1,3 +1,10 @@
+/**
+ * VUT FIT IMS SHO project - Model vyroby v oblasti strojírenství
+ *
+ * @file Product process implementation
+ * @author Petr Kaška <xkaska01@stud.fit.vutbr.cz>
+ * @author Martin Hemza <xhemza05@stud.fit.vutbr.cz>
+ */
 
 #include <iostream>
 
@@ -25,12 +32,28 @@ WorkDay::WorkDay(unsigned long workers, int average_orders_count, double order_d
     product_milling_time_stats = new Stat("Milling");
     product_finalizing_time_stats = new Stat("Final adjustment");
 
-    print_start_of_the_work_day();
+    cout << "############################################################" << endl;
+    cout << "Work day starts." << endl;
+    cout << "\tStart time: " << Time << endl;
+    cout << "\tOrder count: " << *orders << endl;
 }
 
 WorkDay::~WorkDay()
 {
-    print_end_of_the_work_day();
+    cout << "Work day ends." << endl;
+    cout << "\tEnd time: " << Time << endl;
+    cout << "\tNumber of orders left: " << *orders << endl;
+
+    milling_machine->Output();
+    CNC->Output();
+    workers->Output();
+    product_loading_time_stats->Output();
+    product_machining_time_stats->Output();
+    product_milling_preparation_stats->Output();
+    product_milling_time_stats->Output();
+    product_finalizing_time_stats->Output();
+    is_lunch_time->Output();
+
     delete orders;
     delete product_loading_time_stats;
     delete product_machining_time_stats;
@@ -76,30 +99,4 @@ void WorkDay::Behavior()
     Leave(*workers, workers->Capacity());
 
     delete timer;
-}
-
-void WorkDay::print_start_of_the_work_day()
-{
-
-    cout << "############################################################" << endl;
-    cout << "Work day starts." << endl;
-    cout << "\tStart time: " << Time << endl;
-    cout << "\tOrder count: " << *orders << endl;
-}
-
-void WorkDay::print_end_of_the_work_day()
-{
-    cout << "Work day ends." << endl;
-    cout << "\tEnd time: " << Time << endl;
-    cout << "\tNumber of orders left: " << *orders << endl;
-
-    milling_machine->Output();
-    CNC->Output();
-    workers->Output();
-    product_loading_time_stats->Output();
-    product_machining_time_stats->Output();
-    product_milling_preparation_stats->Output();
-    product_milling_time_stats->Output();
-    product_finalizing_time_stats->Output();
-    is_lunch_time->Output();
 }

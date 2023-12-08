@@ -1,3 +1,11 @@
+/**
+ * VUT FIT IMS SHO project - Model vyroby v oblasti strojírenství
+ *
+ * @file Uniform distribution header implementation
+ * @author Petr Kaška <xkaska01@stud.fit.vutbr.cz>
+ * @author Martin Hemza <xhemza05@stud.fit.vutbr.cz>
+ */
+
 #ifndef UNIFORMDISTRIBUTION_HPP
 #define UNIFORMDISTRIBUTION_HPP
 

@@ -1,3 +1,11 @@
+/**
+ * VUT FIT IMS SHO project - Model vyroby v oblasti strojírenství
+ *
+ * @file Product process header implementation
+ * @author Petr Kaška <xkaska01@stud.fit.vutbr.cz>
+ * @author Martin Hemza <xhemza05@stud.fit.vutbr.cz>
+ */
+
 #ifndef WORKDAY_HPP
 #define WORKDAY_HPP
 
@@ -49,16 +57,6 @@ private:
     Stat *product_milling_preparation_stats; ///< Statistics for product milling preparation time.
     Stat *product_milling_time_stats;        ///< Statistics for product milling time.
     Stat *product_finalizing_time_stats;     ///< Statistics for product finalizing time.
-
-    /**
-     * @brief Helper function to print the start of the workday.
-     */
-    void print_start_of_the_work_day();
-
-    /**
-     * @brief Helper function to print the end of the workday.
-     */
-    void print_end_of_the_work_day();
 };
 
 #endif // WORKDAY_HPP
