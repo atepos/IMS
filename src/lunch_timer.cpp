@@ -10,7 +10,7 @@
 
 using namespace std;
 
-LunchTimer::LunchTimer(Facility *is_lunch_time) : is_lunch_time(is_lunch_time){};
+LunchTimer::LunchTimer(Facility *is_lunch_time) : is_lunch_time(is_lunch_time){}
 
 void LunchTimer::Behavior()
 {

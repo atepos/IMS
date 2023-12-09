@@ -25,7 +25,7 @@ Product::Product(Store *workers,
                                                         product_machining_time_stats(product_machining_time_stats),
                                                         product_milling_preparation_stats(product_milling_preparation_stats),
                                                         product_milling_time_stats(product_milling_time_stats),
-                                                        product_finalizing_time_stats(product_finalizing_time_stats){};
+                                                        product_finalizing_time_stats(product_finalizing_time_stats) {}
 
 void Product::Behavior()
 {

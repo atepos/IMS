@@ -1,4 +1,5 @@
 # Author: Petr Kaška <xkaska01>
+# Author: Martin Hemza <xhemza05>
 
 EXECUTABLE := ims_projekt
 BUILD_DIR := cmake-build-release

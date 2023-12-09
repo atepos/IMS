@@ -1,4 +1,6 @@
 # Author: Petr Kaška <xkaska01>
+# Author: Martin Hemza <xhemza05>
+
 
 CMAKE_MINIMUM_REQUIRED(VERSION 3.7)
 
