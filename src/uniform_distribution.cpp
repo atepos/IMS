@@ -11,7 +11,5 @@
 
 double UniformDistribution::UniformDistr(double avg, double dev)
 {
-
-    double dev_dispersion = dev / 100.0 * avg;
-    return Uniform(avg - dev_dispersion, avg + dev_dispersion);
+    return Uniform(avg - (dev / 100.0 * avg), avg + (dev / 100.0 * avg));
 }
